@@ -1,16 +1,15 @@
 import pytest
 from custom_driver import CustomDriver
 from pages.login_page import LoginPage
-from conftest import *
 @pytest.fixture
 def driver():
-    custom_driver = CustomDriver(headless=False)
+    custom_driver = CustomDriver(headless=True)
     yield custom_driver
     custom_driver.quit()
 
 def test_login(driver):
     # Arrange
-    login_page = LoginPage(driver)
+    login_page = loginPage(driver)
     username = "testuser"
     password = "testpass"
 
