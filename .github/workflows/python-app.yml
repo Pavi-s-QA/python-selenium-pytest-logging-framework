@@ -24,5 +24,4 @@ jobs:
         pip install -r requirements.txt
 
     - name: Run Pytest
-      run: |
-        pytest --html=reports/report.html --self-contained-html
+      run: pytest tests/test_login.py --html=reports/report.html --self-contained-html
