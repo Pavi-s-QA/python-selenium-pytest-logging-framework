@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Login Page</h1>
+    <input id="username" type="text" placeholder="Username" />
+    <input id="password" type="password" placeholder="Password" />
+    <button id="loginBtn">Login</button>
+    <h2 id="welcomeMsg" style="display:none;">Welcome, testuser!</h2>
+    <script>
+        document.getElementById("loginBtn").onclick = () => {
+            const user = document.getElementById("username").value;
+            if (user === "testuser" && document.getElementById("password").value === "testpass") {
+                document.getElementById("welcomeMsg").innerText = `Welcome, ${user}!`;
+                document.getElementById("welcomeMsg").style.display = "block";
+            } else {
+                alert("Invalid credentials");
+            }
+        };
+    </script>
+</body>
+</html>
